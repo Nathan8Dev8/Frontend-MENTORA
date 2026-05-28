@@ -1,0 +1,120 @@
+@import "tailwindcss";
+:root {
+  --primary: #ffd200;
+  --primary-dark: #725c00;
+  --secondary: #0060ac;
+  --secondary-light: #64a8fe;
+  --background: #f8f9ff;
+  --foreground: #0b1c30;
+  --surface: #ffffff;
+  --surface-hover: #eff4ff;
+  --border: #d1c6ab;
+}
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-mentora-bg: var(--background);
+  --color-mentora-fg: var(--foreground);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 210, 0, 0.35);
+}
+.btn-primary:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px rgba(255, 210, 0, 0.2);
+}
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-secondary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 96, 172, 0.3);
+}
+.btn-secondary:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px rgba(0, 96, 172, 0.15);
+}
+.card-white {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-white:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 3px 12px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+.card-hover {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.card-hover:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px) scale(1.01);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Suppression des indicateurs Next.js en mode dev */
+nextjs-static-indicator,
+nextjs-portal,
+#__next-build-watcher,
+#root-portal,
+#__next-route-announcer__,
+#preact-border-shadow-host,
+div[data-nextjs-toast-wrapper] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
